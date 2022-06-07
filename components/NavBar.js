@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Link from 'next/link'
 import {useRouter} from 'next/router'
 import {DataContext} from '../store/GlobalState'
@@ -11,8 +11,23 @@ function NavBar() {
     const router = useRouter()
     const {state, dispatch} = useContext(DataContext)
     const { auth, cart } = state
+    const   [isOpen, setIsOpen] = useState(true)
 
 
+    useEffect(() => {
+        const btnMobile = document.querySelectorAll('.nav-item-mobile');
+        const dropdownMobile = window.document.querySelector('#navbarNavDropdown');
+        
+            dropdownMobile.classList.remove('show');
+           
+       
+        setIsOpen(false)
+    }, [isOpen])
+  
+    let abrirNav =()=>{
+       
+        setIsOpen(true)
+    }
     const isActive = (r) => {
         if(r === router.pathname){
             return " active"
@@ -163,37 +178,37 @@ function NavBar() {
         </nav>
         <nav className='links-list-vertical collapse navbar-collapse justify-content-end' id="navbarNavDropdown">
                 <ul className="" >
-                <li className="nav-item">
+                <li className="nav-item nav-item-mobile" >
                         <Link href="/nosotros">
-                            <a style={{color:'white'}} className={"nav-link" + isActive('/nosotros')}>
+                            <a style={{color:'white'}} onClick={abrirNav} className={"nav-link" + isActive('/nosotros')}>
                                 NOSOTROS
                             </a>
                         </Link>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item nav-item-mobile">
                         <Link href="/sucursales">
-                            <a style={{color:'white'}} className={"nav-link" + isActive('/sucursales')}>
+                            <a style={{color:'white'}} onClick={abrirNav} className={"nav-link" + isActive('/sucursales')}>
                                 SUCURSALES
                             </a>
                         </Link>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item nav-item-mobile">
                         <Link href="/servicios">
-                            <a style={{color:'white'}} className={"nav-link" + isActive('/servicios')}>
+                            <a style={{color:'white'}} onClick={abrirNav} className={"nav-link" + isActive('/servicios')}>
                                 SERVICIOS
                             </a>
                         </Link>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item nav-item-mobile">
                         <Link href="/novedades">
-                            <a style={{color:'white'}} className={"nav-link" + isActive('/novedades')}>
+                            <a style={{color:'white'}} onClick={abrirNav} className={"nav-link" + isActive('/novedades')}>
                                 NOVEDADES
                             </a>
                         </Link>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item nav-item-mobile">
                         <Link href="/">
-                            <a style={{color:'white'}} className={"nav-link" + isActive('/')}>
+                            <a style={{color:'white'}} onClick={abrirNav} className={"nav-link" + isActive('/')}>
                                 TIENDA VIRTUAL
                             </a>
                         </Link>

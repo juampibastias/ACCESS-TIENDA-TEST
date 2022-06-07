@@ -25,11 +25,11 @@ const NovedadesItem = ({novedad, handleCheck}) =>{
       <>
       
       <Link href={`createNov/${novedad._id}`}>
-      <a className="btn-custom" 
-      style={{marginRight: '5px', flex: 1}}>Editar</a>
+      <a className="btn-item-edit" 
+      >Editar <i class="fas fa-edit"></i></a>
       </Link>
-      <button className="btn btn-danger"
-      style={{marginLeft: '5px', flex: 1}}
+      <button className="btn btn-danger btn-item-erase"
+      
       data-toggle="modal" data-target="#exampleModal"
       onClick={() => dispatch({
           type: 'ADD_MODAL',
@@ -38,7 +38,7 @@ const NovedadesItem = ({novedad, handleCheck}) =>{
               title: novedad.title, type: 'DELETE_NOV' 
                     }]
                 })} >
-                    Eliminar
+                    Eliminar<i class="fas fa-trash"></i>
                 </button>
       </>
     )

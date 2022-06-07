@@ -83,11 +83,7 @@ const Novedades = (props) => {
               type="checkbox"
               checked={isCheck}
               onChange={handleCheckALL}
-              style={{
-                width: "25px",
-                height: "25px",
-                transform: "translateY(8px)",
-              }}
+              
             />
 
             <button

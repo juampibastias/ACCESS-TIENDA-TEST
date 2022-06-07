@@ -14,7 +14,7 @@ const CartItem = ({item, dispatch, cart}) => {
                         <a>{item.title}</a>
                     </Link>
                 </h5>
-                <p>{item.description}</p>
+               
                </div>
             </td>
 

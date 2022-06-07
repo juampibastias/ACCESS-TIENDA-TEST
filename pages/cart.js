@@ -98,7 +98,7 @@ const Cart = () => {
     
     }
       
-    axios.post("https://morning-citadel-17524.herokuapp.com/payment", {
+    axios.post("http://localhost:3001/payment", {
       data: itemMpArray,
       headers: {
         "Content-Type": "application/json",
@@ -201,27 +201,20 @@ const Cart = () => {
             </table>
           </div>
         </div>
-        <div className="col-md-4 my-3  text-uppercase  contenedor-envio-subtotal">
+        <div className=" my-3  text-uppercase  contenedor-envio-subtotal">
           <h2>RESUMEN</h2>
           <div className="contenedor-envio">
-            <Accordion defaultActiveKey={0} id="accord-envio">
-              <Accordion.Item eventKey="0">
-                <Accordion.Header id="accordion-button">
-                  {" "}
-                  <h2>Datos de envio</h2>
-                </Accordion.Header>
-                <Accordion.Body>
+            
                   <form>
                     <label htmlFor="provincia">Provincia</label>
-                    <input
-                      type="text"
-                      name="provincia"
+                   <select name="provincia"
                       id="provincia"
                       className="form-control mb-2"
-                      value={provincia}
-                      onChange={(e) => setProvincia(e.target.value)}
-                      placeholder="Por ejemplo Mendoza..."
-                    />
+                      onChange={(e)=>setProvincia(e.target.value)}>
+                      <option value="0">Seleccione una provincia</option>
+                      <option value="2">Seleccione una provincia</option>
+                      <option value="3">Seleccione una provincia</option>
+                      </select>
 
                     <label htmlFor="ciudad">Ciudad</label>
                     <input
@@ -232,8 +225,12 @@ const Cart = () => {
                       value={ciudad}
                       onChange={(e) => setCiudad(e.target.value)}
                       placeholder="Por ejemplo Rivadavia..."
+                      autoComplete="on"
                     />
 
+                   <div className="cp-ciudad"
+                   >
+                    <div className="item-cp">
                     <label htmlFor="address">Dirección</label>
                     <input
                       type="text"
@@ -243,8 +240,10 @@ const Cart = () => {
                       value={address}
                       onChange={(e) => setAddress(e.target.value)}
                       placeholder="ingrese su calle y número"
+                      autoComplete="on"
                     />
-
+                    </div>
+                    <div className="item-cp">
                     <label htmlFor="cp">Código postal</label>
                     <input
                       type="text"
@@ -253,11 +252,15 @@ const Cart = () => {
                       className="form-control mb-2"
                       value={cp}
                       onChange={(e) => setCp(e.target.value)}
-                      placeholder="Por ejemplo 5560"
+                      placeholder="- - - -" pattern="[0-9]{4}"
+                      autoComplete="on"
                     />
+                   </div>
+                    </div>
+                   
 
                     <label htmlFor="mobile">
-                      Numero de telefono con Whatsapp
+                     Teléfono
                     </label>
                     <input
                       type="text"
@@ -267,6 +270,7 @@ const Cart = () => {
                       value={mobile}
                       onChange={(e) => setMobile(e.target.value)}
                       placeholder="+54 9 xxxxxxxxx"
+                      autoComplete="on"
                     />
 
                     <label htmlFor="coment">Comentario</label>
@@ -280,9 +284,7 @@ const Cart = () => {
                       onChange={(e) => setComent(e.target.value)}
                     />
                   </form>
-                </Accordion.Body>
-              </Accordion.Item>
-            </Accordion>
+       
             <div className="contenedor-subtotal">
               <div className="subtotal-item">
                 <h4>Articulos</h4>

@@ -147,7 +147,7 @@ const Profile = () => {
                 </div>
 
                 <div className="col-md-8">
-                    <h3 className="text-uppercase">Orden de compra</h3>
+                    <h3 className="text-uppercase">Mis ordenes de compras</h3>
 
                     <div className="my-3 table-responsive">
                         <table className="table-bordered table-hover w-100 text-uppercase"

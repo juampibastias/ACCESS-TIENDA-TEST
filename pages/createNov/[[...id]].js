@@ -114,22 +114,23 @@ const NovedadesManager = () => {
             <Head>
                 <title>Administración de Novedades</title>
             </Head>
-            <h3 className='text-center my-5'>NOVEDADES MANAGER</h3>
-            <form className="row" onSubmit={handleSubmit}>
-                <div className="col-md-6">
-
+            <h3 className='text-center my-3 '>NOVEDADES MANAGER</h3>
+            <form  onSubmit={handleSubmit}>
+   
+        <div className='items-form'>
+        <label for="name">Nombre</label>
                     <input type="text" name="name" value={name}
-                    placeholder="Título" className="d-block my-4 w-100 p-2"
+                    placeholder="Título" className="d-block  w-100 p-2"
                     onChange={handleChangeInput} />
-
+<label for="descrip">Descripción</label>
                     <textarea name="descrip" id="descrip" cols="30" rows="4"
                     placeholder="Descripción" onChange={handleChangeInput}
-                    className="d-block my-4 w-100 p-2" value={descrip} />
-
+                    className="d-block  w-100 p-2" value={descrip} />
+<label for="detail">Detalles</label>
                     <textarea name="detail" id="detail" cols="30" rows="4"
                     placeholder="Detalle de la novedad" onChange={handleChangeInput}
-                    className="d-block my-4 w-100 p-2" value={detail} />
-
+                    className="d-block  w-100 p-2" value={detail} />
+<label for="category">Categorias</label>
                   <div className="input-group-prepend px-0 my-2">
                         <select name="category" id="category" value={category}
                         onChange={handleChangeInput} className="custom-select text-capitalize">
@@ -143,15 +144,17 @@ const NovedadesManager = () => {
                             }
                         </select>
                     </div>
-
-
+                    
                     <button type="submit" className="btn btn-info my-2 px-4">
                         {onEdit ? 'Actualizar': 'Crear'}
                     </button>
 
-                </div>
+        </div>
 
-                <div className="col-md-6 my-4">
+
+                
+
+                <div className="form-images">
                     <div className="input-group mb-3">
                         <div className="input-group-prepend">
                             <span className="input-group-text">Elegí la foto</span>

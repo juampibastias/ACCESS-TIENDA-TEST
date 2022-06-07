@@ -13,6 +13,7 @@ import { getData } from '../utils/fetchData'
 import ProductHome from '../components/product/ProductHome'
 import {useRouter} from 'next/router'
 import MiniCartWidget from '../components/widget/minicart'
+
 /* import NovedadesHome from "../components/Novedad/NovedadesHome"
  */
 
@@ -96,7 +97,7 @@ const Home = (props) => {
         auth.user && auth.user.role === 'admin' &&
         <div className="delete_all btn btn-danger mt-2" style={{marginBottom: '-10px'}}>
           <input type="checkbox" checked={isCheck} onChange={handleCheckALL}
-          style={{width: '25px', height: '25px', transform: 'translateY(8px)'}} />
+           />
 
           <button className="btn btn-danger ml-2"
           data-toggle="modal" data-target="#exampleModal"
@@ -106,7 +107,7 @@ const Home = (props) => {
         </div>
       }
 
-      <div className="products">
+      <div className="featured">
         {
           products.length === 0 
           ? <h2>No hay productos</h2>
