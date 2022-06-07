@@ -105,7 +105,7 @@ const Novedades = (props) => {
           ))
         )}
 
-        {props.result < page * 6 ? (
+        {props.result < page * 8 ? (
           ""
         ) : (
           <button

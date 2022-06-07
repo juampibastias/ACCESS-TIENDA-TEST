@@ -26,7 +26,12 @@ const DetailNovedades = (props) => {
         <h2>{novedades.name.toUpperCase()}</h2>
         </div>
         <div className="desc">
+          <h4>Descripción</h4>
         {novedades.descrip}
+        </div>
+        <div className="desc">
+          <h4>Detalles</h4>
+        {novedades.detail}
         </div>
         <div hidden className="row mx-0">
         {novedades.category}

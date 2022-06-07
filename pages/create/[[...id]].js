@@ -12,10 +12,11 @@ const ProductsManager = () => {
         inStock: 0,
         description: '',
         content: '',
+        color: '',
         category: ''
     }
     const [product, setProduct] = useState(initialState)
-    const {title, price, inStock, description, content, category} = product
+    const {title, price, inStock, description, content, color, category} = product
 
 
     const [images, setImages] = useState([])
@@ -88,7 +89,7 @@ const ProductsManager = () => {
         if(auth.user.role !== 'admin') 
         return dispatch({type: 'NOTIFY', payload: {error: 'Autenticación inválida.'}})
 
-        if(!title || !price || !inStock || !description || !content || category === 'all' || images.length === 0)
+        if(!title || !price || !inStock || !description || !content || !color || category === 'all' || images.length === 0)
         return dispatch({type: 'NOTIFY', payload: {error: 'Por favor complete todos los campos.'}})
 
     
@@ -151,6 +152,10 @@ const ProductsManager = () => {
                     <textarea name="content" id="content" cols="30" rows="6"
                     placeholder="Comentario" onChange={handleChangeInput}
                     className="d-block my-4 w-100 p-2" value={content} />
+
+                    <textarea name="color" id="color" cols="30" rows="6"
+                    placeholder="Color" onChange={handleChangeInput}
+                    className="d-block my-4 w-100 p-2" value={color} />
 
                     <div className="input-group-prepend px-0 my-2">
                         <select name="category" id="category" value={category}

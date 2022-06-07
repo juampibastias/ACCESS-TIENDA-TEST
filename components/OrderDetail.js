@@ -35,7 +35,7 @@ const OrderDetail = ({orderDetail, state, dispatch}) => {
 
                     <div className="mt-4 text-secondary">
                         <h3>Datos de envío</h3>
-                        <p>Nombre: {order.user.name}</p>
+                        <p className='bold'>Nombre: {order.user.name}</p>
                         <p>Email: {order.user.email}</p>
                         <p>Provincia: {order.provincia}</p>
                         <p>Ciudad: {order.ciudad}</p>
@@ -43,6 +43,7 @@ const OrderDetail = ({orderDetail, state, dispatch}) => {
                         <p>Dirección: {order.address}</p>
                         <p>Telefono: {order.mobile}</p>
                         <p>Comentarios: {order.coment}</p>
+                        <p>Color del producto: {order.color}</p>
 
 
                         <div className={`alert ${order.delivered ? 'alert-success' : 'alert-danger'}

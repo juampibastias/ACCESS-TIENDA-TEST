@@ -64,6 +64,9 @@ const ProductItem = ({product, handleCheck}) => {
                 <p className="card-text" title={product.description}>
                     {product.description}
                 </p>
+                <p className="card-text" title={product.color}>
+                    {product.color}
+                </p>
 
                 {/* <div className="row justify-content-between mx-0">
                     <h6 hidden className="text-danger">${product.price}</h6>

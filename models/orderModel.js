@@ -11,6 +11,7 @@ const orderSchema = new mongoose.Schema({
     ciudad: String,
     cp: String,
     coment: String,
+    color: String,
     cart: Array,
     total: Number,
     paymentId: String,

@@ -7,9 +7,11 @@ import { getData, postData } from "../utils/fetchData";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import pibeDeFondo from "../public/images/pibeDeFondo.png";
-import { Accordion } from "react-bootstrap";
 import axios from "axios";
 
+
+
+//Variables para axios mercadopago
 let itemMp;
 let itemMpArray = [];
 
@@ -25,7 +27,7 @@ const Cart = () => {
   const [cp, setCp] = useState("");
   const [mobile, setMobile] = useState("");
   const [coment, setComent] = useState("");
-
+  const [color, setColor] = useState("");
   const [callback, setCallback] = useState(false);
   const router = useRouter();
 
@@ -70,7 +72,7 @@ const Cart = () => {
   }, [callback]);
 
   const handlePayment = async () => {
-    if (!provincia || !ciudad || !address || !mobile || !coment || !cp)
+    if (!provincia || !ciudad || !address || !mobile || !coment || !color || !cp)
       return dispatch({
         type: "NOTIFY",
         payload: { error: "Por favor, complete los datos de envío." },
@@ -98,7 +100,7 @@ const Cart = () => {
     
     }
       
-    axios.post("https://morning-citadel-17524.herokuapp.com/payment", {
+    axios.post("http://localhost:3001/payment", {
       data: itemMpArray,
       headers: {
         "Content-Type": "application/json",
@@ -124,7 +126,7 @@ const Cart = () => {
 
     postData(
       "order",
-      { provincia, ciudad, address, cp, mobile, coment, cart, total },
+      { provincia, ciudad, address, cp, mobile, coment, color, cart, total },
       auth.token
     ).then((res) => {
       if (res.err)
@@ -211,9 +213,29 @@ const Cart = () => {
                       id="provincia"
                       className="form-control mb-2"
                       onChange={(e)=>setProvincia(e.target.value)}>
-                      <option value="0">Seleccione una provincia</option>
-                      <option value="2">Seleccione una provincia</option>
-                      <option value="3">Seleccione una provincia</option>
+                      <option value="0">Buenos Aires</option>
+                      <option value="1">CABA</option>
+                      <option value="2">Catamarca</option>
+                      <option value="3">Chaco</option>
+                      <option value="4">Chubut</option>
+                      <option value="5">Cordoba</option>
+                      <option value="6">Entre Rios</option>
+                      <option value="7">Formosa</option>
+                      <option value="8">Jujuy</option>
+                      <option value="9">La Pampa</option>
+                      <option value="10">La Rioja</option>
+                      <option value="11">Mendoza</option>
+                      <option value="12">Misiones</option>
+                      <option value="13">Neuquen</option>
+                      <option value="14">Rio Negro</option>
+                      <option value="15">Salta</option>
+                      <option value="16">San Juan</option>
+                      <option value="17">San Luis</option>
+                      <option value="18">Santa Cruz</option>
+                      <option value="19">Santa Fe</option>
+                      <option value="20">Santiago del Estero</option>
+                      <option value="21">Tierra del Fuego</option>
+                      <option value="22">Tucuman</option>
                       </select>
 
                     <label htmlFor="ciudad">Ciudad</label>
@@ -284,15 +306,27 @@ const Cart = () => {
                       onChange={(e) => setComent(e.target.value)}
                     />
                   </form>
+                  <form>
+                  <label htmlFor="color">Color del producto</label>
+                    <input
+                      type="text"
+                      name="color"
+                      id="color"
+                      placeholder="rojo, verde, azul..."
+                      className="form-control mb-2"
+                      value={color}
+                      onChange={(e) => setColor(e.target.value)}
+                    />
+                  </form>
        
             <div className="contenedor-subtotal">
               <div className="subtotal-item">
-                <h4>Articulos</h4>
+                <h4>Total Articulos</h4>
                 <h4>$ {total}</h4>
               </div>
               <div className="subtotal-item">
-                <h4>Envio</h4>
-                <h4>$ {0}</h4>
+                {/* <h4>Envio</h4>
+                <h4>$ {0}</h4> */}
               </div>
             </div>
             <h3>

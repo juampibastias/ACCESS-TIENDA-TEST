@@ -77,14 +77,14 @@ const createProduct = async (req, res) => {
         const result = await auth(req, res)
         if(result.role !== 'admin') return res.status(400).json({err: 'Autenticación inválida.'})
 
-        const {title, price, inStock, description, content, category, images} = req.body
+        const {title, price, inStock, description, content, color, category, images} = req.body
 
-        if(!title || !price || !inStock || !description || !content || category === 'all' || images.length === 0)
+        if(!title || !price || !inStock || !description || !content || !color || category === 'all' || images.length === 0)
         return res.status(400).json({err: 'Por favor complete todos los campos.'})
 
 
         const newProduct = new Products({
-            title: title.toLowerCase(), price, inStock, description, content, category, images
+            title: title.toLowerCase(), price, inStock, description, content, color, category, images
         })
 
         await newProduct.save()
