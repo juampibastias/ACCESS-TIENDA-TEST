@@ -108,7 +108,7 @@ const Cart = ({ provincias }) => {
     }
 
     axios
-      .post("http://localhost:3001/payment", {
+      .post("https://morning-citadel-17524.herokuapp.com/payment", {
         data: itemMpArray,
         headers: {
           "Content-Type": "application/json",
