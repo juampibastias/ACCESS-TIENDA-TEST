@@ -64,18 +64,15 @@ const ProductItem = ({product, handleCheck}) => {
                 <p className="card-text" title={product.description}>
                     {product.description}
                 </p>
-                <p className="card-text" title={product.color}>
-                    {product.color}
-                </p>
 
-                {/* <div className="row justify-content-between mx-0">
+                <div className="row justify-content-between mx-0">
                     <h6 hidden className="text-danger">${product.price}</h6>
                     {
                         product.inStock > 0
-                        ? <h6 className="text-danger">En Stock: {product.inStock}</h6>
-                        : <h6 className="text-danger">Sin Stock</h6>
+                        ? <h6 hidden className="text-danger">En Stock: {product.inStock}</h6>
+                        : <h6 className="text-danger">Stock agotado</h6>
                     }
-                </div> */}
+                </div>
 
                 
                     

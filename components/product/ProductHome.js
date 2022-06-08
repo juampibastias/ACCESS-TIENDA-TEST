@@ -4,7 +4,7 @@ import { DataContext } from '../../store/GlobalState'
 
 const ProductHome = ({product, handleCheck}) => {
     const { state, dispatch } = useContext(DataContext)
-    const { cart, auth } = state
+    const { auth } = state
 
     const userLink = () => {
         return(

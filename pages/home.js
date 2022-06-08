@@ -12,10 +12,9 @@ import {DataContext} from '../store/GlobalState'
 import { getData } from '../utils/fetchData'
 import ProductHome from '../components/product/ProductHome'
 import {useRouter} from 'next/router'
-import MiniCartWidget from '../components/widget/minicart'
+//import MiniCartWidget from '../components/widget/minicart'
+//import NovedadesHome from "../components/Novedad/NovedadesHome"
 
-/* import NovedadesHome from "../components/Novedad/NovedadesHome"
- */
 
 
 const Home = (props) => {
@@ -116,26 +115,29 @@ const Home = (props) => {
             <ProductHome key={product._id} product={product} handleCheck={handleCheck} />
           ))
         }
+        
       </div>
-      
-      {
+      <div>
+</div>
+       {
         props.result < page * 6 ? ""
         : <button className="btn btn-outline-info d-block mx-auto mb-4"
         onClick={handleLoadmore}>
           Mostrar más
         </button>
-      }
-       {/* {
+      } 
+      {/*  {
       novedades.length === 0
       ? <h2>Sin novedades</h2>
       : novedades.map(novedad => (
         <NovedadesItem key={novedad._id} novedad={novedad} />
       ))
-    } */}
+    }  */}
 
     </div>
   )
 }
+
 export async function getServerSideProps({query}) {
   const page = query.page || 1
   const category = query.category || 'all'
@@ -153,6 +155,7 @@ export async function getServerSideProps({query}) {
     },  // will be passed to the page component as props
   }
 }
+
 
 export default Home
 
