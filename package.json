@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-  "node": "16.13.1",
-  "npm": "8.3.1"
+    "node": "16.13.1",
+    "npm": "8.3.1"
   },
   "scripts": {
     "dev": "next dev",
@@ -13,6 +13,9 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "@heroku-cli/plugin-buildpacks": "^7.54.0",
     "@heroku/buildpack-registry": "^1.0.1",
     "animate.css": "^4.1.1",
