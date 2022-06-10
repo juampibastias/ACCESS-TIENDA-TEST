@@ -7,16 +7,14 @@ import { getData, postData } from "../utils/fetchData";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import pibeDeFondo from "../public/images/pibeDeFondo.png";
-import axios from "axios";
+import axios from 'axios'
+
 
 //Variables para axios mercadopago
 let itemMp;
 let itemMpArray = [];
 
-const Cart = ({ provincias }) => {
-
-  console.log(provincias)
-  
+const Cart = () => {
 
   const { state, dispatch } = useContext(DataContext);
   const { cart, auth, orders } = state;
@@ -106,9 +104,9 @@ const Cart = ({ provincias }) => {
 
       itemMpArray.push(itemMp);
     }
-
+    //llamada a api de mercadopago
     axios
-      .post("https://morning-citadel-17524.herokuapp.com/payment", {
+      .post("http://localhost:3001/payment", {
         data: itemMpArray,
         headers: {
           "Content-Type": "application/json",
@@ -338,30 +336,23 @@ const Cart = ({ provincias }) => {
               Total: <span className="text-danger">${total}</span>
             </h3>
           </div>
-          <Link href="/">
-            <a className="btn add-to-cart my-2">Seguir comprando</a>
-          </Link>
+          <div className="contenedor-boton">
+            <Link href="/">
+              <a className="btn add-to-cart my-2">Seguir comprando</a>
+            </Link>
 
-          <Link href={auth.user ? "#!" : "/signin"}>
-            <a className="btn add-to-cart my-2" onClick={handlePayment}>
-              Iniciar pago
-            </a>
-          </Link>
+            <Link href={auth.user ? "#!" : "/signin"}>
+              <a className="btn add-to-cart my-2" onClick={handlePayment}>
+                Iniciar pago
+              </a>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
   );
 };
-export async function getServerSideProps() {
-  try {
-    const peticion = await fetch(
-      "https://apis.datos.gob.ar/georef/api/provincias"
-    );
-    const provincias = await peticion.json();
-    return {
-      props: { provincias }, // will be passed to the page component as props
-    };
-  } catch (error) {}
-}
+
+
 
 export default Cart;

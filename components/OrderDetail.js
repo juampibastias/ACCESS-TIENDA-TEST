@@ -25,29 +25,30 @@ const OrderDetail = ({orderDetail, state, dispatch}) => {
 
     if(!auth.user) return null;
     return(
-        <>
+        <div className='order-container'>
         {
             orderDetail.map(order => (
-            <div key={order._id} style={{margin: '20px auto'}} className="row justify-content-around">
+            <div key={order._id} style={{margin: '20px auto'}} className="container-general">
 
-                <div className="text-uppercase my-3" style={{maxWidth: '600px'}}>
-                    <h2 className="text-break">Mi orden de pedido {order._id}</h2>
+                <div className="text-uppercase my-3 order-upper" >
+                    <h2 className="text-break order-title">Mi orden de pedido: <b>#{order._id}</b></h2>
 
-                    <div className="mt-4 text-secondary">
-                        <h3>Datos de envío</h3>
-                        <p className='bold'>Nombre: {order.user.name}</p>
-                        <p>Email: {order.user.email}</p>
-                        <p>Provincia: {order.provincia}</p>
-                        <p>Ciudad: {order.ciudad}</p>
-                        <p>Codigo postal: {order.cp}</p>
-                        <p>Dirección: {order.address}</p>
-                        <p>Telefono: {order.mobile}</p>
-                        <p>Comentarios: {order.coment}</p>
-                        <p>Color del producto: {order.color}</p>
+                   <div className='order-item-container'>
+                   <div className=" order-details">
+                        <h3 className='title'>Datos de envío</h3>
+                        <p className='bold'>Nombre: <b>{order.user.name}</b></p>
+                        <p>Email: <b>{order.user.email}</b></p>
+                        <p>Provincia: <b>{order.provincia}</b></p>
+                        <p>Ciudad: <b>{order.ciudad}</b></p>
+                        <p>Codigo postal: <b>{order.cp}</b></p>
+                        <p>Dirección: <b>{order.address}</b></p>
+                        <p>Telefono: <b>{order.mobile}</b></p>
+                        <p>Comentarios: <b>{order.coment}</b></p>
+                        <p>Color del producto: <b>{order.color}</b></p>
 
 
                         <div className={`alert ${order.delivered ? 'alert-success' : 'alert-danger'}
-                        d-flex justify-content-between align-items-center`} role="alert">
+                        d-flex justify-content-between align-items-center fw-bold`} role="alert">
                             {
                                 order.delivered ? `Entregado ${order.updatedAt}` : 'No entregado'
                             }
@@ -61,45 +62,50 @@ const OrderDetail = ({orderDetail, state, dispatch}) => {
                             
                         </div>
 
-                        <div>
+                        
+
+                    </div>
+                    <div className='product-list-order'>
                             <h3>Lista de artículos</h3>
                             {
                                 order.cart.map(item => (
-                                    <div className="row border-bottom mx-0 p-2 justify-content-betwenn
-                                    align-items-center" key={item._id} style={{maxWidth: '550px'}}>
+                                    <div className="articles-list" key={item._id} >
                                         <img src={item.images[0].url} alt={item.images[0].url}
-                                        style={{width: '50px', height: '45px', objectFit: 'cover'}} />
-
-                                        <h5 className="flex-fill text-secondary px-3 m-0">
+                                        />
+<div className='title-price-qty'> <h5 className="flex-fill  px-3 m-0">
                                             <Link href={`/product/${item._id}`}>
                                                 <a>{item.title}</a>
                                             </Link>
                                         </h5>
 
-                                        <span className="text-info m-0">
+                                        <span className=" m-0">
                                             {item.quantity} x ${item.price} = ${item.price * item.quantity}
-                                        </span>
+                                        </span></div>
+                                       
 
+                                       
                                     </div>
                                 ))
                             }
-                        </div>
-
-                    </div>
-
-                </div>
-                            
-                {
+                             {
                     !order.paid && auth.user.role !== 'admin' &&
                     <div className="p-4">
                         <h2 className="mb-4 text-uppercase">Total: ${order.total}</h2>
                     </div>
                 }
+                      
+                      
+                        </div>
+                   </div>
+
+                </div>
+                            
+                
                
             </div>
             ))
         }
-        </>
+        </div>
     )
 }
 

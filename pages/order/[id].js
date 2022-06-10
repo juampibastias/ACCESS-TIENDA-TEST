@@ -20,19 +20,19 @@ const DetailOrder = () => {
             
     if(!auth.user) return null;
     return(
-        <div className="my-3">
+        <div className="my-3 order-page">
             <Head>
                 <title>Detalle de pedido</title>
             </Head>
 
-            <div>
+            
+            
+            <OrderDetail orderDetail={orderDetail} state={state} dispatch={dispatch} />
+            <div className='btn-back'>
                 <button className="btn btn-dark" onClick={() => router.back()}>
                     <i className="fas fa-long-arrow-alt-left"  aria-hidden="true"></i> Volver
                 </button>
             </div>
-            
-            <OrderDetail orderDetail={orderDetail} state={state} dispatch={dispatch} />
-        
         </div>
     )
 }

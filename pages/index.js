@@ -6,6 +6,7 @@ import ProductItem from "../components/product/ProductItem";
 import filterSearch from "../utils/filterSearch";
 import { useRouter } from "next/router";
 import Filter from "../components/Filter";
+import Link from 'next/link'
 import MiniCartWidget from "../components/widget/minicart";
 
 const Home = (props) => {
@@ -77,13 +78,13 @@ const Home = (props) => {
           </li>
         </ol>
       </nav>
-      <img
-        src="https://imgmp.mlstatic.com/org-img/banners/ar/medios/785X40.jpg"
-        title="Mercado Pago - Medios de pago"
-        alt="Mercado Pago - Medios de pago"
-        width="785"
-        height="40"
-      />
+     <div className="contenedor-mp-banner">
+      <button className="btn btn-success m-2">
+      <Link href='/costoEnvio'>
+      Costos de envíos
+      </Link>
+      </button>
+     </div>
       <Filter state={state} />
 
       {auth.user && auth.user.role === "admin" && (

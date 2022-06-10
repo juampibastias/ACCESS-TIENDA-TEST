@@ -53,23 +53,29 @@ const DetailProduct = (props) => {
             </div>
 
             <div className="text-pdp">
-                <h2 className="text-uppercase">{product.title}</h2>
+               <div className="title-price">
+               <h2 className="text-uppercase">{product.title}</h2>
                 <h5 className="">${product.price}</h5>
+               </div>
 
-                <div className="row mx-0 d-flex justify-content-between">
-                    {
+                <div className="row mx-0 d-flex justify-content-between stock-info">
+                   <div className='data-stock'>
+                   {
                         product.inStock > 0
-                        ? <h6 className="">En Stock: {product.inStock}</h6>
-                        : <h6 className="">Sin Stock</h6>
+                        ? <h6 className="">En Stock: <b>{product.inStock}</b></h6>
+                        : <h6 className=""><b>Sin Stock</b></h6>
                     }
 
-                    <h6 className="">Vendidos: {product.sold}</h6>
-                    <h6 className="">Colores disponibles: {product.color}</h6>
+                    <h6 className="">Vendidos:<b> {product.sold}</b></h6>
+                   </div>
+                    <h6 className="">Colores disponibles: <b>{product.color}</b></h6>
                 </div>
+               <div className="info">
                 <div><h4>Descripción</h4></div>
-                <div className="my-2">{product.description}</div>
-                <div><h4>Especificaciones técnicas</h4></div>
-                <div className="my-2">{product.content}</div>
+                 <div className="my-2">{product.description}</div>
+                 <div><h4>Especificaciones técnicas</h4></div>
+                 <div className="my-2">{product.content}</div>
+               </div>
 
               <div className='botonera'>
               <button type="button" className="btn add-to-cart"

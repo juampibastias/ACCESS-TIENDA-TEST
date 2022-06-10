@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import { DataProvider } from '../store/GlobalState'
 import Footer from '../components/Footer'
 
+
 function MyApp({ Component, pageProps }) {
   return (
     <DataProvider>
@@ -11,6 +12,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </Layout>
       <Footer />
+
     </DataProvider>
   )
 }
