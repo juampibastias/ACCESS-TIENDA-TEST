@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import Filter from "../components/Filter";
 import Link from 'next/link'
 import MiniCartWidget from "../components/widget/minicart";
+import path from "path";
 
 const Home = (props) => {
   const [products, setProducts] = useState(props.products);
@@ -80,7 +81,7 @@ const Home = (props) => {
       </nav>
      <div className="contenedor-mp-banner">
       <button className="btn btn-success m-2">
-      <Link href='/costoEnvio'>
+      <Link href="">
       Costos de envíos
       </Link>
       </button>

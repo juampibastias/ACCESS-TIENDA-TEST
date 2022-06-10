@@ -31,6 +31,7 @@
     "mercadopago": "^1.5.12",
     "mongoose": "^5.10.14",
     "next": "^12.1.5",
+    "path": "^0.12.7",
     "phoenix": "^1.6.5",
     "react": "17.0.1",
     "react-bootstrap": "^2.3.1",
