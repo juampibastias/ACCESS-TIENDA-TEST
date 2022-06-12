@@ -9,8 +9,8 @@ const DetailNovedades = (props) => {
     <div className="contenedor-detallesnovedades">
        <nav aria-label="breadcrumb">
   <ol className="breadcrumb">
-    <li className="breadcrumb-item"><a href="home">Inicio</a></li>
-    <li className="breadcrumb-item " aria-current="page">Novedades</li>
+    <li className="breadcrumb-item"><a href="/home">Inicio</a></li>
+    <li className="breadcrumb-item "><a href="/novedades">Novedades</a></li>
     <li className="breadcrumb-item active" aria-current="page">{novedades.name}</li>
   </ol>
 </nav>

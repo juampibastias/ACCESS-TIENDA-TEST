@@ -4,6 +4,17 @@ import Image from "next/image";
 import banner from "../public/images/banner.png";
 import banner1 from "../public/images/banner1.png";
 import banner2 from "../public/images/banner2.png";
+import banner3 from "../public/OFERTA-access.png";
+import banner4 from "../public/OFERTA-access1.png";
+import separatorImg from "../public/promos/ingreso.jpeg";
+import separatorImg2 from "../public/promos/ingreso_2.jpeg";
+
+import separatorImg3 from "../public/promos/ingreso_3.jpeg";
+
+
+
+
+
 import { Carousel } from "react-bootstrap";
 
 import { useState, useContext, useEffect } from "react";
@@ -12,6 +23,7 @@ import { DataContext } from "../store/GlobalState";
 import { getData } from "../utils/fetchData";
 import ProductHome from "../components/product/ProductHome";
 import { useRouter } from "next/router";
+import SeparatorImage from "../components/separatorImg";
 //import MiniCartWidget from '../components/widget/minicart'
 
 const Home = (props) => {
@@ -79,6 +91,12 @@ const Home = (props) => {
         <Carousel.Item>
           <Image className="d-block w-100" src={banner} alt="Third slide" />
         </Carousel.Item>
+        <Carousel.Item>
+          <Image className="d-block w-100" src={banner3} alt="fourth slide" />
+        </Carousel.Item>
+        <Carousel.Item>
+          <Image className="d-block w-100" src={banner4} alt="fifth slide" />
+        </Carousel.Item>
       </Carousel>
 
       {/*       <NovedadesHome />
@@ -100,8 +118,11 @@ const Home = (props) => {
           </button>
         </div>
       )}
+      <SeparatorImage imagen={separatorImg} imagen2={separatorImg2} imagen3={separatorImg3}  title="aah"/>
 
       <div className="featured">
+        <h2>Nuevos Ingresos</h2>
+        <div className="featured-items">
         {products.length === 0 ? (
           <h2>No hay productos</h2>
         ) : (
@@ -113,7 +134,10 @@ const Home = (props) => {
             />
           ))
         )}
+        
+        </div>
       </div>
+
       <div></div>
       {props.result < page * 6 ? (
         ""

@@ -12,6 +12,7 @@ import path from "path";
 
 const Home = (props) => {
   const [products, setProducts] = useState(props.products);
+  const posts = props.provincias;
 
   const [isCheck, setIsCheck] = useState(false);
   const [page, setPage] = useState(1);
@@ -81,7 +82,7 @@ const Home = (props) => {
       </nav>
      <div className="contenedor-mp-banner">
       <button className="btn btn-success m-2">
-      <Link href="">
+      <Link href="/costoEnvio">
       Costos de envíos
       </Link>
       </button>
@@ -151,7 +152,7 @@ export async function getServerSideProps({ query }) {
 
   const res = await getData(
     `product?limit=${
-      page * 30
+      page * 20
     }&category=${category}&sort=${sort}&title=${search}`
   );
   // server side rendering

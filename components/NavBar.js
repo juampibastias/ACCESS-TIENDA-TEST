@@ -94,7 +94,7 @@ function NavBar() {
             <MiniCartWidget count={cart.length} />
         <nav className="navbar bootless-margin navbar-expand-lg navbar-light bg-dark text-light">
             <Link className="text-center"  href="/home">
-                <a className=" text-center"><Image src={logo} alt='logo-access' /></a>
+                <a className=" text-center"><Image src={logo} className="logo" layout="intrinsic" alt='logo-access' /></a>
             </Link>
             <button className="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -215,7 +215,7 @@ function NavBar() {
                     </li>
                     <li className="nav-item">
                         <Link href="/cart">
-                            <a style={{color:'white'}} className={"nav-link" + isActive('/cart')}>
+                            <a style={{color:'white'}} onClick={abrirNav} className={"nav-link" + isActive('/cart')}>
                                 <i className="fas fa-shopping-cart position-relative" aria-hidden="true">
                                     <span className="position-absolute"
                                     style={{
