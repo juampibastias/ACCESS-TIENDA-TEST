@@ -17,13 +17,13 @@ let itemMpArray = [];
 
 const Cart = () => {
 
-  let tarifaEnvios = require('/costoEnvio.json')
+  //let tarifaEnvios = require('/costoEnvio.json')
 
   const { state, dispatch } = useContext(DataContext);
   const { cart, auth, orders } = state;
 
   const [total, setTotal] = useState(0);
-  const [costo, setCosto] = useState(0);
+  //const [costo, setCosto] = useState(0);
 
   const [provincia, setProvincia] = useState("");
   const [ciudad, setCiudad] = useState("");
