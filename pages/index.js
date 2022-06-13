@@ -80,13 +80,6 @@ const Home = (props) => {
           </li>
         </ol>
       </nav>
-     <div className="contenedor-mp-banner">
-      <button className="btn btn-success m-2">
-      <Link href="/costoEnvio">
-      Costos de envíos
-      </Link>
-      </button>
-     </div>
       <Filter state={state} />
 
       {auth.user && auth.user.role === "admin" && (

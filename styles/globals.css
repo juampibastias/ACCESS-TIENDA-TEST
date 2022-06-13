@@ -1742,6 +1742,132 @@ a {
      object-position: center;
 }
 
+.mp-error {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mp-error h2 {
+  color: white;
+  background-color: #eb4545;
+  padding: 1rem;
+  border-radius: 10px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.mp-error .contenedor-botones {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.mp-error .contenedor-botones a {
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #534080;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mp-error .contenedor-botones a:hover {
+  cursor: pointer;
+  background-color: #8268c1;
+}
+
+.mp-error .contenedor-botones a i {
+  padding-left: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.mp-pending {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mp-pending h2 {
+  color: white;
+  background-color: #fa9829;
+  padding: 1rem;
+  border-radius: 10px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.mp-pending .contenedor-botones {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.mp-pending .contenedor-botones a {
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #534080;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mp-pending .contenedor-botones a:hover {
+  cursor: pointer;
+  background-color: #8268c1;
+}
+
+.mp-pending .contenedor-botones a i {
+  padding-left: 0.5rem;
+  font-size: 1.5rem;
+}
+
 .botonera {
   display: -webkit-box;
   display: -ms-flexbox;

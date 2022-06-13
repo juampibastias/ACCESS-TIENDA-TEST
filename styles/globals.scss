@@ -1434,6 +1434,95 @@ a {
     }
 }
 
+//FailurePage
+.mp-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        color: white;
+        background-color: rgb(235, 69, 69);
+        padding: 1rem;
+        border-radius: 10px;
+        width: max-content;
+    }
+
+    .contenedor-botones {
+        display: flex;
+        flex-direction: row;
+
+        a {
+            margin: 1rem;
+
+            padding: 1rem;
+            border-radius: 10px;
+            background-color: $color-2;
+            color: white;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+
+            &:hover {
+                cursor: pointer;
+                background-color: $color-2-2;
+
+            }
+
+            i {
+                padding-left: 0.5rem;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+.mp-pending {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        color: white;
+        background-color: rgb(250, 152, 41);
+        padding: 1rem;
+        border-radius: 10px;
+        width: max-content;
+    }
+
+    .contenedor-botones {
+        display: flex;
+        flex-direction: row;
+
+        a {
+            margin: 1rem;
+
+            padding: 1rem;
+            border-radius: 10px;
+            background-color: $color-2;
+            color: white;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+
+            &:hover {
+                cursor: pointer;
+                background-color: $color-2-2;
+
+            }
+
+            i {
+                padding-left: 0.5rem;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+
+
 //BOTONES VARIOS
 .botonera {
     display: flex;

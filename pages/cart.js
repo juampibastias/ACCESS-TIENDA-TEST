@@ -7,9 +7,7 @@ import { getData, postData } from "../utils/fetchData";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import pibeDeFondo from "../public/images/pibeDeFondo.png";
-import axios from 'axios'
-
-
+import axios from "axios";
 
 //Variables para axios mercadopago
 let itemMp;
@@ -110,7 +108,7 @@ const Cart = () => {
     }
     //llamada a api de mercadopago
     axios
-      .post("https://morning-citadel-17524.herokuapp.com/payment", {
+      .post("http://localhost:3001/payment", {
         data: itemMpArray,
         headers: {
           "Content-Type": "application/json",
