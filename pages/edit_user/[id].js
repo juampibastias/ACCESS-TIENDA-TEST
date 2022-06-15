@@ -62,8 +62,8 @@ const EditUser = () => {
                 </button>
             </div>
 
-            <div className="col-md-4 mx-auto my-4">
-                <h2 className="text-uppercase text-secondary">Editar usuario</h2>
+            <div className="">
+                <h2 className="text-uppercase ">Editar usuario</h2>
 
                 <div className="form-group">
                     <label htmlFor="name" className="d-block">Nombre</label>

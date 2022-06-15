@@ -15,13 +15,13 @@ let itemMpArray = [];
 
 const Cart = () => {
 
-  //let tarifaEnvios = require('/costoEnvio.json')
+  
 
   const { state, dispatch } = useContext(DataContext);
   const { cart, auth, orders } = state;
 
   const [total, setTotal] = useState(0);
-  //const [costo, setCosto] = useState(0);
+  
 
   const [provincia, setProvincia] = useState("");
   const [ciudad, setCiudad] = useState("");
@@ -108,7 +108,7 @@ const Cart = () => {
     }
     //llamada a api de mercadopago
     axios
-      .post("http://localhost:3001/payment", {
+      .post("https://access-api-mp.herokuapp.com/payment", {
         data: itemMpArray,
         headers: {
           "Content-Type": "application/json",

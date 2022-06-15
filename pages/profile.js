@@ -85,7 +85,7 @@ const Profile = () => {
         })
     }
 
-
+    console.log(name)
     if(!auth.user) return null;
     return( 
         <div className="profile_page">
@@ -93,10 +93,12 @@ const Profile = () => {
                 <title>Perfil</title>
             </Head>
 
-            <section className="row text-secondary my-3">
-                <div className="col-md-4">
-                    <h3 className="text-center text-uppercase">
-                        {auth.user.role === 'user' ? 'User Profile' : 'Admin Profile'}
+            <h2 className='title'>Perfil</h2>
+
+            <section className="general-container">
+                <div className="contenedor-data-profile">
+                    <h3 className="text-center name">
+                        {auth.user.role === 'user' ? "Hola! "+name: 'Admin Profile'}
                     </h3>
 
                     <div className="avatar">
@@ -140,18 +142,18 @@ const Profile = () => {
                         placeholder="Confirme nueva contraseña" onChange={handleChange} />
                     </div>
 
-                    <button className="btn btn-info" disabled={notify.loading}
+                    <button className="btn " disabled={notify.loading}
                     onClick={handleUpdateProfile}>
                         Actulizar
                     </button>
                 </div>
 
-                <div className="col-md-8">
-                    <h3 className="text-uppercase">Mis ordenes de compras</h3>
+                <div className="contenedor-tabla-profile">
+                    <h3 className="">Mis ordenes de compras</h3>
 
                     <div className="my-3 table-responsive">
-                        <table className="table-bordered table-hover w-100 text-uppercase"
-                        style={{minWidth: '600px', cursor: 'pointer'}}>
+                        <table className="table-bordered table-hover "
+                        >
                             <thead className="bg-light font-weight-bold">
                                 <tr>
                                     <td className="p-2">id</td>

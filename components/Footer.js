@@ -1,11 +1,13 @@
 import React from "react";
 import Link from 'next/link'
+import Image from 'next/image';
+import imagenLogo from "../public/images/logoblanco.png";
 
 const Footer = () => {
     return(
         <footer className="footer">
         <div className="footer-logo">
-          <img className="logo-blanco" src="images/logoblanco.png" alt="access" />
+          <Image className="logo-blanco" src={imagenLogo} alt="access" />
         </div>
   
         <ul >

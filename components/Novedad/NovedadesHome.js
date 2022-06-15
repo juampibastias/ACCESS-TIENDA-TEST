@@ -15,7 +15,7 @@ const NovedadesHome = ({novedad}) =>{
   }
     
     return(
-        <div className="card" style={{width: "18rem"}}>
+        <div className="card" >
         <img className="card-img-top" src={novedad.images[0].url} alt={novedad.images[0].url} />
         <div className="card-body">
           <h5 className="card-title">{novedad.name}</h5>

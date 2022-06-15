@@ -3,6 +3,7 @@ import { useState, useContext } from 'react'
 import { getData } from '../../utils/fetchData'
 import { DataContext } from '../../store/GlobalState'
 import { addToCart } from '../../store/Actions'
+import { useRouter } from 'next/dist/client/router'
 
 const DetailProduct = (props) => {
     const [product] = useState(props.product)
@@ -15,6 +16,8 @@ const DetailProduct = (props) => {
         if(tab === index) return " active";
         return ""
     }
+    const route = useRouter();
+    console.log(route.asPath)
 
     return(
         <div className="contenedor-pdp">
@@ -86,6 +89,21 @@ const DetailProduct = (props) => {
                 <button type="button" className="btn continue">
                     <a href='/'>Seguir comprando</a>
                 </button>
+              </div>
+              <div className='social-share'>
+                <h4>Compartir +</h4>
+                <ul>
+                    <li>
+                        <a href={`https://www.facebook.com/sharer/sharer.php?u=https://access.com.ar`+route.asPath} target="_blank"><i className="fab fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href={`https://twitter.com/intent/tweet?text=Mira este producto! https://access.com.ar`+route.asPath} target="_blank"><i className="fab fa-twitter"></i></a>
+                    </li>
+            
+                    <li>
+                        <a href={`whatsapp://send?text=Mira este producto!:https://access.com.ar`+route.asPath}><i className="fab fa-whatsapp"></i></a>
+                    </li>
+                </ul>
               </div>
                 <div>
             </div>

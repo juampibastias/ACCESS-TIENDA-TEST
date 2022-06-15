@@ -38,6 +38,9 @@ const DetailNovedades = (props) => {
         </div>
       </div>
       </div>
+      <div className="novedad-banner">
+      <img src="../OFERTA-access.png"></img>
+      </div>
     </div>
   );
 };
