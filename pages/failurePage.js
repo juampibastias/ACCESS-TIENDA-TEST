@@ -20,9 +20,9 @@ export const failurePage = () => {
         
         
 
-        <a onClick={()=>{
+        <a /* onClick={()=>{
           alert("lo sentimos, de momento no hay operadores disponibles")
-        }}>Atención al cliente <i class="fa fa-comments"></i></a>
+        }} */ href="https://wa.me/5492634617852">Atención al cliente <i class="fa fa-comments"></i></a>
         </div>
        
       </div>
