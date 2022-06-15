@@ -11,7 +11,7 @@ export const failurePage = () => {
 
       <div className="contenedor-texto mp-error">
         <h2>PAGO RECHAZADO POR MERCADOPAGO</h2>
-        <p>Parece ser que hubo un error en el pago por el sistema de Mercado Pago. <br/>
+        <p>Parece ser que hubo un error en el pago por el sistema de MercadoPago. <br/>
          Lo invitamos a que vuelva a intentar o que se comunique con uno de nuestros operadores. <br/>
           <b>Estamos atentos para ayudarlo con el inconveniente</b></p>
         <div className="contenedor-botones">

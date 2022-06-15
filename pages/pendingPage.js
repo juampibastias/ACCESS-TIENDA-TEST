@@ -14,7 +14,7 @@ export const pendingPage = () => {
         <h2>Pago en Revisión</h2>
       <p>
       Mercadopago esta procesando tu pago.<br/> <br/>
-        No te preocupes, en menos de 2 días hábiles mercadopago te avisará por e-mail si se acreditó o si necesitamos más información.
+        No te preocupes, en menos de 2 días hábiles MercadoPago te avisará por e-mail si se acreditó o si necesitamos más información.
 <br/>
         Tu orden de pedido quedara pendiente en tu perfil, si deseas puedes carncelar tu compra desde mercadopago.
 
